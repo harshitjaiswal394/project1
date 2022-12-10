@@ -1,9 +1,9 @@
-data "aws_ami" "ubuntu" {
+data "aws_ami" "ubuntu-linux-2004" {
   most_recent = true
 
   filter {
     name   = "name"
-    values = ["Canonical, Ubuntu, 22.04 LTS, amd64 jammy image build on 2022-12-01"]
+    values = ["ubuntu/images/hvm-ssd/ubuntu-focal-20.04-amd64-server-*"]
   }
 
   filter {
@@ -13,7 +13,7 @@ data "aws_ami" "ubuntu" {
 }
 
 resource "aws_instance" "dev_machine" {
-  ami = data.aws_ami.ubuntu.id
+  ami = data.aws_ami.ubuntu-linux-2004.id
   instance_type = "t2.micro"
   key_name = "jenkins2"
 
