@@ -13,7 +13,7 @@ data "aws_ami" "ubuntu-linux-2004" {
 }
 
 resource "aws_instance" "dev_machine" {
-  ami = data.aws_ami.ubuntu-linux-2004.id
+  ami = data.aws_ami.ubuntu.id
   instance_type = "t2.micro"
   key_name = "jenkins2"
 
