@@ -10,6 +10,7 @@ data "aws_ami" "ubuntu-linux-2004" {
     name   = "virtualization-type"
     values = ["hvm"]
   }
+  owners = ["099720109477"] # Canonical
 }
 
 resource "aws_instance" "dev_machine" {
