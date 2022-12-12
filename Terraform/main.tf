@@ -16,7 +16,7 @@ data "aws_ami" "ubuntu" {
 resource "aws_instance" "dev_machine" {
   ami = data.aws_ami.ubuntu.id
   instance_type = "t2.micro"
-  key_name = "jenkins2"
+  key_name = "jenkins2.pem"
 
   tags = {
     Environment = "dev"
