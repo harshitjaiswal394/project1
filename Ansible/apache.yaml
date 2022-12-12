@@ -1,3 +1,4 @@
+---
 - name: This sets up an httpd webserver
   hosts: aws_ec2
   become: yes
