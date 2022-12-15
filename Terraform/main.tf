@@ -49,7 +49,7 @@ resource "aws_instance" "dev_machine" {
   ami = data.aws_ami.ubuntu.id
   instance_type = var.instance_type
   key_name = var.key_name
-  security_groups= var.security_group
+  security_group= var.security_group
   tags = {
     Environment = "dev"
     Name = "${var.name}-server"
